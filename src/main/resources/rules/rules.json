@@ -1,0 +1,35 @@
+[
+	{
+		"name": "rule_1",
+		"description": "Rule 1",
+		"priority": 1,
+		"condition": "((account.getAccountType().equals(\"debit\")) && (account.getAccountOrigin().equals(\"domestic\")))",
+		"actions":
+		[
+			"account.setPayInterestFlag(\"N\");",
+			"account.setTraceabilityDescription(\"Rule 1 applied\");"
+		]
+	},
+	{
+		"name": "rule_2",
+		"description": "Rule 2",
+		"priority": 1,
+		"condition": "((account.getAccountType().equals(\"credit\")) && (account.getAccountOrigin().equals(\"domestic\")))",
+		"actions":
+		[
+			"account.setPayInterestFlag(\"Y\");",
+			"account.setTraceabilityDescription(\"Rule 2 applied\");"
+		]
+	},
+	{
+		"name": "rule_3",
+		"description": "Rule 3",
+		"priority": 1,
+		"condition": "((account.getAccountType().equals(\"credit\")) && (account.getAccountOrigin().equals(\"foreign\")))",
+		"actions":
+		[
+			"account.setPayInterestFlag(\"Y\");",
+			"account.setTraceabilityDescription(\"Rule 3 applied\");"
+		]
+	}
+]
